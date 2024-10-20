@@ -1,0 +1,168 @@
+/* Custom styles */
+:root {
+    --primary: #FFA500;
+    --secondary: #5F9EA0;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --body-bg: #ffffff;
+    --body-color: #212529;
+    --link-color: #007bff;
+    --link-hover-color: #0056b3;
+}
+
+/* Tema Gelap */
+[data-theme="dark"] {
+    --primary: #ffd700;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #343a40;
+    --dark: #f8f9fa;
+    --white: #343a40;
+    --black: #ffffff;
+    --gray: #adb5bd;
+    --gray-dark: #ced4da;
+    --body-bg: #121212;
+    --body-color: #e0e0e0;
+    --link-color: #00bfff;
+    --link-hover-color: #80dfff;
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: var(--link-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--white);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--body-color);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: var(--primary);
+}
+
+/* Buttons */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--link-hover-color);
+    border-color: var(--link-hover-color);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--gray);
+    border-color: var(--gray);
+}
+
+/* Cards */
+.card {
+    background-color: var(--white);
+    border-color: var(--gray);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Forms */
+.form-control {
+    background-color: var(--white);
+    border-color: var(--gray);
+    color: var(--body-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Carousel */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark);
+    color: var(--light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom classes */
+.text-primary { color: var(--primary) !important; }
+.text-secondary { color: var(--secondary) !important; }
+.text-success { color: var(--success) !important; }
+.text-info { color: var(--info) !important; }
+.text-warning { color: var(--warning) !important; }
+.text-danger { color: var(--danger) !important; }
+.text-light { color: var(--light) !important; }
+.text-dark { color: var(--dark) !important; }
+
+.bg-primary { background-color: var(--primary) !important; }
+.bg-secondary { background-color: var(--secondary) !important; }
+.bg-success { background-color: var(--success) !important; }
+.bg-info { background-color: var(--info) !important; }
+.bg-warning { background-color: var(--warning) !important; }
+.bg-danger { background-color: var(--danger) !important; }
+.bg-light { background-color: var(--light) !important; }
+.bg-dark { background-color: var(--dark) !important; }
+
+/* Additional custom styles */
+.feature-item, .service-item, .about-item-content, .blog-item, .testimonial-item {
+    background-color: var(--white);
+    transition: background-color 0.3s ease;
+}
+
+/* Adjust text colors for better contrast in dark mode */
+[data-theme="dark"] .text-dark {
+    color: var(--light) !important;
+}
+
+[data-theme="dark"] .text-body {
+    color: var(--body-color) !important;
+}
+
+/* Ensure proper contrast for links in dark mode */
+[data-theme="dark"] a:not(.btn) {
+    color: var(--link-color);
+}
+
+[data-theme="dark"] a:not(.btn):hover {
+    color: var(--link-hover-color);
+}
