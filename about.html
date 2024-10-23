@@ -60,30 +60,36 @@
         <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
             <div class="container">
                 <div class="row gx-0 align-items-center">
-                    <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="col-lg-6 text-center text-lg-start mb-lg-0">
                         <div class="d-flex flex-wrap">
                             <div class="border-end border-primary pe-3">
                                 <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
                             </div>
                             <div class="ps-3">
-                                <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>ryanwaskitoaji678@gmail.com</a>
+                                <a href="mailto:ryanwaskitoaji678@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>ryanwaskitoaji678@gmail.com</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 text-center text-lg-end">
-                        <div class="d-flex justify-content-end">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <div class="d-flex justify-content-end align-items-center">
                             <div class="d-flex border-end border-primary pe-3">
                                 <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
                                 <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
-                                <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-tiktok"></i></a>
                             </div>
-                            <div class="dropdown ms-3">
-                                <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
+                            <div class="dropdown ms-3 border-end border-primary pe-3">
+                                <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fas fa-globe-europe text-primary me-2"></i> Language</small></a>
                                 <div class="dropdown-menu rounded">
-                                    <a href="#" class="dropdown-item">English</a>
-                                    <a href="#" class="dropdown-item">Indonesian</a>
+                                    <a href="#" class="dropdown-item" onclick="changeLanguage('en')">English</a>
+                                    <a href="#" class="dropdown-item" onclick="changeLanguage('id')">Indonesian</a>
                                 </div>
+                            </div>
+                            <div class="ms-3">
+                                <button id="themeToggle" class="btn btn-sm btn-outline-primary" onclick="toggleTheme()">
+                                    <i class="fas fa-sun"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -127,7 +133,6 @@
             </div>
         </div>
         <!-- Navbar & Hero End -->
-
         <!-- Modal Search Start -->
         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen">
@@ -185,7 +190,7 @@
                         <div class="col-sm-6">
                             <div class="counter-item bg-light rounded p-3 h-100">
                                 <div class="counter-counting">
-                                    <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">1000</span>
+                                    <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">99</span>
                                     <span class="h1 fw-bold text-primary">+</span>
                                 </div>
                                 <h4 class="mb-0 text-dark">Game yang Didukung</h4>
@@ -194,7 +199,7 @@
                         <div class="col-sm-6">
                             <div class="counter-item bg-light rounded p-3 h-100">
                                 <div class="counter-counting">
-                                    <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">500K</span>
+                                    <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">5000</span>
                                     <span class="h1 fw-bold text-primary">+</span>
                                 </div>
                                 <h4 class="mb-0 text-dark">Pengguna Terdaftar</h4>
@@ -203,7 +208,7 @@
                         <div class="col-sm-6">
                             <div class="counter-item bg-light rounded p-3 h-100">
                                 <div class="counter-counting">
-                                    <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">2000</span>
+                                    <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">300</span>
                                     <span class="h1 fw-bold text-primary">+</span>
                                 </div>
                                 <h4 class="mb-0 text-dark">Transaksi Harian</h4>
@@ -215,7 +220,7 @@
                                     <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">50</span>
                                     <span class="h1 fw-bold text-primary">+</span>
                                 </div>
-                                <h4 class="mb-0 text-dark">Game Partner</h4>
+                                <h4 class="mb-0 text-dark">Sponsor Partner</h4>
                             </div>
                         </div>
                     </div>
@@ -227,59 +232,37 @@
 <!-- About End -->
 
 
-<!-- Feature Start -->
+<!-- Website Explanation Start -->
 <div class="container-fluid feature bg-light pb-5">
     <div class="container pb-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-            <h4 class="text-primary">Fitur Kami</h4>
-            <h1 class="display-4 mb-4">Meningkatkan Pengalaman Bermain Game Kamu</h1>
-            <p class="mb-0">Kami menyediakan berbagai fitur yang akan membuat pengalaman gaming kamu semakin menyenangkan. Dengan transaksi yang cepat dan customer service yang responsif, kamu bisa fokus pada permainan.</p>
+            <h4 class="text-primary">About GameCharge</h4>
+            <h1 class="display-4 mb-4">Your Ultimate Gaming Top-Up Destination</h1>
         </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="feature-item p-4 pt-0">
-                    <div class="feature-icon p-4 mb-4">
-                        <i class="far fa-handshake fa-3x"></i>
-                    </div>
-                    <h4 class="mb-4">Perusahaan Terpercaya</h4>
-                    <p class="mb-4">Kami telah melayani ribuan gamers dengan layanan yang terpercaya dan berkualitas.</p>
-                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Selengkapnya</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="feature-item p-4 pt-0">
-                    <div class="feature-icon p-4 mb-4">
-                        <i class="fa fa-dollar-sign fa-3x"></i>
-                    </div>
-                    <h4 class="mb-4">Harga Bersaing</h4>
-                    <p class="mb-4">Kami menawarkan harga yang kompetitif dengan promo menarik yang bisa kamu nikmati.</p>
-                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Selengkapnya</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="feature-item p-4 pt-0">
-                    <div class="feature-icon p-4 mb-4">
-                        <i class="fa fa-gamepad fa-3x"></i>
-                    </div>
-                    <h4 class="mb-4">Dukungan Berbagai Game</h4>
-                    <p class="mb-4">Kami mendukung berbagai game populer dan selalu menambah game baru sesuai kebutuhan kamu.</p>
-                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Selengkapnya</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                <div class="feature-item p-4 pt-0">
-                    <div class="feature-icon p-4 mb-4">
-                        <i class="fa fa-headphones fa-3x"></i>
-                    </div>
-                    <h4 class="mb-4">Layanan 24/7</h4>
-                    <p class="mb-4">Tim support kami siap membantu kamu kapan saja, 24/7 untuk memastikan pengalaman terbaik.</p>
-                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Selengkapnya</a>
-                </div>
-            </div>
+        <div class="wow fadeInUp" data-wow-delay="0.4s">
+            <p class="fs-5 mb-4">GameCharge is your one-stop solution for all your gaming top-up needs. We understand the passion and dedication of gamers, and we're here to fuel your gaming experience with quick, secure, and hassle-free top-up services.</p>
+            
+            <h3 class="text-primary mb-3">Our Mission</h3>
+            <p class="fs-5 mb-4">At GameCharge, we aim to empower gamers by providing seamless access to in-game currencies and items. We believe that nothing should stand between you and your ultimate gaming experience.</p>
+            
+            <h3 class="text-primary mb-3">What Sets Us Apart</h3>
+            <ul class="fs-5 mb-4">
+                <li>Lightning-fast transactions: Get your top-ups in minutes, not hours.</li>
+                <li>Unparalleled security: Your data and transactions are protected by state-of-the-art encryption.</li>
+                <li>24/7 Customer Support: Our dedicated team is always ready to assist you.</li>
+                <li>Wide Game Selection: From mobile legends to AAA titles, we've got you covered.</li>
+                <li>Competitive Pricing: Enjoy the best rates in the market without hidden fees.</li>
+            </ul>
+            
+            <h3 class="text-primary mb-3">Our Technology</h3>
+            <p class="fs-5 mb-4">Powered by cutting-edge blockchain technology, GameCharge ensures transparent, secure, and instant transactions. Our platform is designed with scalability in mind, capable of handling millions of transactions daily without breaking a sweat.</p>
+            
+            <h3 class="text-primary mb-3">Join the GameCharge Community</h3>
+            <p class="fs-5">Whether you're a casual gamer or a professional e-sports athlete, GameCharge is here to support your journey. Join thousands of satisfied gamers who trust us for their top-up needs. Level up your gaming experience with GameCharge today!</p>
         </div>
     </div>
 </div>
-<!-- Feature End -->
+<!-- Website Explanation End -->
 
 <!-- Our Member Section -->
 <div class="container my-5">
@@ -289,56 +272,108 @@
     </div>
 </div>
 
-
-
 <!-- profile member -->
-<div class="row row-cols-1 row-cols-md-5 g-4 mx-5">
-    <div class="col">
-      <div class="card h-100">
-        <img src="img/Leonardo_Anime_XL_buatlah_gambar_seorang_pria_sedang_mengerjak_2.jpg" class="card-img-top" alt="card example" />
-        <div class="card-body">
-          <h5 class="card-title">Ryan Waskito Aji</h5>
-          <p class="card-text">Senior Software Enginer</p>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/ryan.jpg" class="card-img-top" alt="Ryan Waskito Aji" />
+                <div class="card-body">
+                    <h5 class="card-title">Ryan Waskito Aji</h5>
+                    <p class="card-text">
+                        <strong>Role:</strong> Pemula<br>
+                        <strong>Age:</strong> 18<br>
+                        <strong>Hobbies:</strong> Coding, hiking, playing guitar<br>
+                        Ryan is our tech wizard, with a passion for creating robust and scalable systems. His innovative solutions form the backbone of GameCharge.
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/vanno.jpg" class="card-img-top" alt="Devanno Andhika Putra" />
+                <div class="card-body">
+                    <h5 class="card-title">Devanno Andhika Putra</h5>
+                    <p class="card-text">
+                        <strong>Role:</strong> Business Analyst<br>
+                        <strong>Age:</strong> 26<br>
+                        <strong>Hobbies:</strong> Data analysis, chess, photography<br>
+                        Devanno's keen eye for market trends and user behavior helps shape our business strategies and improve user experiences.
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/amar.jpg" class="card-img-top" alt="Muhammad Ammar" />
+                <div class="card-body">
+                    <h5 class="card-title">Muhammad Ammar</h5>
+                    <p class="card-text">
+                        <strong>Role:</strong> Front-End Developer<br>
+                        <strong>Age:</strong> 24<br>
+                        <strong>Hobbies:</strong> UI design, gaming, traveling<br>
+                        Ammar brings our vision to life with his creative designs and smooth user interfaces, ensuring an enjoyable experience for all users.
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="img/Leonardo_Anime_XL_business_analyst_man_1.jpg" class="card-img-top" alt="card example" />
-        <div class="card-body">
-          <h5 class="card-title">Devanno Andhika Putra</h5>
-          <p class="card-text">Business Analyst</p>
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/amat.jpg" class="card-img-top" alt="Ahmad Nur Wahidiah" />
+                <div class="card-body">
+                    <h5 class="card-title">Ahmad Nur Wahidiah</h5>
+                    <p class="card-text">
+                        <strong>Role:</strong> Back-End Developer<br>
+                        <strong>Age:</strong> 27<br>
+                        <strong>Hobbies:</strong> Algorithm design, reading, cycling<br>
+                        Ahmad is our backend maestro, ensuring that all our systems run smoothly and efficiently behind the scenes.
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/ayu.jpg" class="card-img-top" alt="Ayu" />
+                <div class="card-body">
+                    <h5 class="card-title">Ayu</h5>
+                    <p class="card-text">
+                        <strong>Role:</strong> UI/UX Designer<br>
+                        <strong>Age:</strong> 25<br>
+                        <strong>Hobbies:</strong> Digital art, user research, yoga<br>
+                        Ayu's creative flair and deep understanding of user psychology help create intuitive and visually stunning interfaces for our platform.
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="img/Leonardo_Anime_XL_frontend_developer_man_0.jpg" class="card-img-top" alt="card example" />
-        <div class="card-body">
-          <h5 class="card-title">Muhammad Ammar</h5>
-          <p class="card-text">Front-End Developer</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-        <div class="card h-100">
-          <img src="img/Leonardo_Anime_XL_backend_developer_website_man_0.jpg" class="card-img-top" alt="card example" />
-          <div class="card-body">
-            <h5 class="card-title">Ahmad Nur Wahidiah</h5>
-            <p class="card-text">Back-End Developer</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="img/Leonardo_Anime_XL_senior_software_enginer_2.jpg" class="card-img-top" alt="card example" />
-          <div class="card-body">
-            <h5 class="card-title">Ayu</h5>
-            <p class="card-text">UI/UX Desainer</p>
-          </div>
-        </div>
-      </div>
-  </div>
+</div>
 
 
 
@@ -456,3 +491,6 @@
     </body>
 
 </html>
+
+</html>
+
